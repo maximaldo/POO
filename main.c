@@ -69,19 +69,74 @@ void ejer6(){
 	
 }
 void ejer7(){
-	int hora;
-	int minutos;
-	scanf("%d %d",&hora,&minutos);
-	if(hora >= 12){
-		hora = hora - 12;
-		printf("son las %d:%d PM",hora,minutos);}
-		else if(hora < 12){
-		printf("son las %d:%d AM",hora,minutos);
+int horas;
+		int minutos;
+		printf("Ingrese la hora: ");
+		scanf("%d %d", &horas, &minutos);
+		
+		if(horas < 13) {
+			if(horas == 0) {
+				printf("%d:%d AM", horas + 12, minutos);
+			}
+			else {
+			printf("%d:%d AM", horas, minutos);
+			}
 		}
+ 		if(horas > 12) {
+			if(horas == 12) {
+				printf("%d:%d PM", horas, minutos);
+		}
+			else {
+				printf("%d:%d PM ", horas - 12, minutos);
+		}
+		}
+       	 printf("\n");
+         system("pause");
+	}
 	
+void ejer8(){
+	puts("Escribi tu inversion");
+	int inversion;
+	scanf("%d",&inversion);
+	int ahorro = inversion + inversion * 0.02;
+	printf("Invirtio un total de %d y ahorro en total %d",inversion,ahorro);	
+	
+}
+void ejer9(){
+	int padre = 50;
+	int hijo = 20;
+	int i;
+    while((padre+1) / 2 != hijo){
+    	hijo++;
+    	padre++;
+    	i++;
+	}
+	printf("dentro de %d tendra el hijo la mitad de la edad del padre, el hijo tendra %d y el padre %d",i,hijo,padre);
+}
+
+void ejer10(){
+	puts("decime unos segundos y los paso a horas");
+	int ingreso;
+	int segundos;
+	int minutos;
+	int horas;
+	scanf("%d",&ingreso);
+	
+	while(ingreso > 60){
+    if(ingreso > 60){
+    	segundos = ingreso
+	}else if(segundos = 60){
+		segundos = 0;
+		minutos++;
+	}else if(minutos = 60){
+		minutos = 0;
+		horas++;
+	}
+	}
+	printf("%d:%d:%d",)
 }
 
 int main(int argc, char *argv[]) {
-    ejer7();
+    ejer9();
 	return 0;
 }
