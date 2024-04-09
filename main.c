@@ -122,21 +122,84 @@ void ejer10(){
 	int horas;
 	scanf("%d",&ingreso);
 	
-	while(ingreso > 60){
-    if(ingreso > 60){
-    	segundos = ingreso
-	}else if(segundos = 60){
-		segundos = 0;
-		minutos++;
-	}else if(minutos = 60){
-		minutos = 0;
-		horas++;
-	}
-	}
-	printf("%d:%d:%d",)
+    horas = ingreso / 3600;
+    minutos = (ingreso % 3600) / 60;
+    segundos = ingreso % 60;
+	printf("%d:%d:%d",horas,minutos,segundos);
 }
 
-int main(int argc, char *argv[]) {
-    ejer9();
+void ejer11(){
+	int CalPar1;
+	int CalPar2;
+	int CalPar3;
+	int examf;
+	int trabf;
+	int calificacion;
+	
+	puts("escribi tus 3 calificaciones parciales");
+	scanf("%d %d %d",&CalPar1,&CalPar2,&CalPar3);
+	puts("Ahora la calificacion del examen final y trabajo final");
+    scanf("%d %d",&examf,&trabf);
+    calificacion = ((CalPar1 + CalPar2 + CalPar3) / 3) * 0.55 + examf * 0.3 + trabf * 0.15;
+    printf("Su clasificacion final es: %d",calificacion);
+}
+
+void ejer12(){
+	int base;
+	int venta1;
+	int venta2;
+	int venta3;
+	double total;
+	double comision;
+    puts("Escribir el sueldo base y el valor de las 3 ventas");
+	scanf("%d %d %d %d",&base,&venta1,&venta2,&venta3);
+	comision = (double)venta1 * 0.10 + (double)venta2 * 0.10 + (double)venta3 * 0.10;
+	total = comision + base;
+	printf("El pago por la comision es %.2f y el total que va recibir es %.2f", comision,total);
+}
+
+void ejer13(){
+	puts("Escribi el precio de tu compra");
+	int compra;
+	int result;
+	scanf("%d",&compra);
+	result = compra - compra * 0.15;
+	printf("el precio a pagar es :%d",result);
+}
+
+void ejer14(){
+	int numero;
+	puts("escribi tu numero");
+	scanf("%d",&numero);
+	if(numero < 0){
+    numero *= -1;
+	}
+	printf("el valor absoluto de tu numero es %d",numero);
+}
+
+void ejer15(){
+	int hombres;
+	int mujeres;
+	puts("ingreses la cantidad de hombres y mujeres");
+	scanf("%d %d",&hombres,&mujeres);
+	int total = hombres + mujeres;
+	double porcentajeH = (hombres*100)/total;
+	double porcentajeM= (mujeres*100)/total;
+	printf("Porcentaje de hombres %.2f y de mujeres %.2f",porcentajeH,porcentajeM);
+	
+}	
+void ejer16(){
+    int pesos;
+    int unidad;
+    puts("Escribime la cantidad de pesos que deseas convertir");
+    scanf("%d",&pesos);
+    puts("ahora la unidad cambiaria");
+    scanf("%d",&unidad);
+    printf("%d pesos son en total %.2f dolares",pesos,(double)pesos / (double)unidad);
+}
+
+
+int main() {
+    ejer15();
 	return 0;
 }
