@@ -183,8 +183,8 @@ void ejer15(){
 	puts("ingreses la cantidad de hombres y mujeres");
 	scanf("%d %d",&hombres,&mujeres);
 	int total = hombres + mujeres;
-	double porcentajeH = (hombres*100)/total;
-	double porcentajeM= (mujeres*100)/total;
+	double porcentajeH = (hombres*100)/(double)total;
+	double porcentajeM= (mujeres*100)/(double)total;
 	printf("Porcentaje de hombres %.2f y de mujeres %.2f",porcentajeH,porcentajeM);
 	
 }	
@@ -198,8 +198,64 @@ void ejer16(){
     printf("%d pesos son en total %.2f dolares",pesos,(double)pesos / (double)unidad);
 }
 
+void ejer17(){
+	int edad;
+	double peso;
+	char genero;
+	puts("escribi tu edad");
+	scanf("%d",&edad);
+	puts("ahora tu peso");
+	scanf("%lf",&peso);
+	puts("Elegi genero masculino o femenino con una letra");
+	scanf(" %c",&genero);
+    double nashe;
+	if(genero == 'm'){
+    nashe = ((210 - (0.5 * edad)) - peso * 0.01) + 4;
+	}else if(genero == 'f'){
+	nashe =  ((210 - (0.5 * edad)) - peso * 0.01);
+	}
+	printf("tu frecuencia maxima cardiaca es:%.2f",nashe);	
+}
 
-int main() {
-    ejer15();
-	return 0;
+
+int main(){
+    int eleccion;
+	puts("escribi el numero del ejercicio");
+	scanf("%d",&eleccion);
+   switch(eleccion){
+   	case 1:
+   		ejer1();
+   	case 2:
+   		ejer2();
+   	case 3:
+   		ejer3();
+   	case 4:
+   		ejer4();
+   	case 5:
+   		ejer5();
+   	case 6:
+   		ejer6();
+   	case 7:
+   		ejer7();
+   	case 8:
+   		ejer8();
+   	case 9:
+   		ejer9();
+   	case 10:
+   		ejer10();
+   	case 11:
+   		ejer11();
+   	case 12:
+   		ejer12();
+   	case 13:
+   		ejer13();
+   	case 14:
+   		ejer14();
+   	case 15:
+   		ejer15();
+   	case 16:
+   		ejer16();
+   	case 17:
+   		ejer17();
+   }
 }
