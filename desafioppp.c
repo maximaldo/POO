@@ -18,17 +18,21 @@ int main() {
 			printf("1-Piedra \t 2-Papel \t 3-Tijera\n");
 			printf("\n");
 			scanf("%d",&eleccion);
+			if(maquina != 1 || maquina != 2 ||maquina != 3){
+			j--;
+			break;
+			}
 			printf("\n");
 			printf("El jugador eligio %s\n",ppp[eleccion - 1]);
 			printf("La maquina eligio %s\n",ppp[maquina - 1]);
 			printf("\n");
-			if(eleccion == 1 && maquina == 3 || eleccion == 2 && maquina == 1 || eleccion == 3 && maquina == 2) {   // Gana jugador 
-			vueltaj++;
+			if(eleccion == 1 && maquina == 3 || eleccion == 2 && maquina == 1 || eleccion == 3 && maquina == 2) { 
+			vueltaj++;   // Gana jugador
             printf("GANO EL JUGADOR LA VUELTA, VAN \n JUGADOR: %d MAQUINA: %d \n",vueltaj,vueltam);
             
 			}
-			else if(maquina == 1 && eleccion == 3 || maquina == 2 && eleccion == 1 || maquina == 3 && eleccion == 2) {// Gana maquina
-			vueltam++;
+			else if(maquina == 1 && eleccion == 3 || maquina == 2 && eleccion == 1 || maquina == 3 && eleccion == 2) {
+			vueltam++;// Gana maquina
             printf("GANO LA MAQUINA LA VUELTA, VAN \n JUGADOR: %d MAQUINA: %d \n",vueltaj,vueltam);
 			}
 			else if(maquina == eleccion) { // empate
@@ -39,12 +43,12 @@ int main() {
 		}
 		if(vueltaj > vueltam){
 			rondaj++;
-			printf("GANO EL JUGADOR LA RONDA, VAN \n JUGADOR: %d MAQUINA: %d", rondaj, rondam);
+			printf("GANO EL JUGADOR LA RONDA %d, VAN \n JUGADOR: %d MAQUINA: %d",rondaj + rondam, rondaj, rondam);
 				printf("\n");
 		}
 		else{
 			rondam++;
-			printf("GANO LA MAQUINA LA RONDA, VAN \n JUGADOR: %d MAQUINA: %d", rondaj, rondam);
+			printf("GANO LA MAQUINA LA RONDA, VAN \n JUGADOR: %d MAQUINA: %d",rondaj + rondam, rondaj, rondam);
 				printf("\n");
 		}
 		vueltaj = 0;
